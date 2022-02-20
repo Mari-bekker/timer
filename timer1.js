@@ -3,7 +3,6 @@
 // Implement an alarm clock / timer which will beep after a specified amount of time has passed.
 // The user can specify an unlimited number of alarms using command line arguments
 // Example usage: node timer1.js 10 3 5 15 9 
-// How to make a beep: process.stdout.write('\x07');
 
 // Code
 
@@ -26,7 +25,7 @@ const timer = function () {
     alarms.sort((a, b) => (a - b));
 
     for (let i = 0; i < alarms.length; i++) {
-      alarms[i] = alarms[i] * 100;
+        alarms[i] = alarms[i] * 100;
     }
     
     console.log(alarms);

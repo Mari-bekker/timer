@@ -16,7 +16,6 @@ const timer = function () {
   let alarms = [];
   alarms = process.argv.slice(2);
   console.log(alarms);
- 
 
   if(alarms.length === 0) {
     //console.log("empty input");
@@ -26,6 +25,19 @@ const timer = function () {
 
     for (let i = 0; i < alarms.length; i++) {
         alarms[i] = alarms[i] * 100;
+        }
+    }
+
+  //   for (let i = 0; i < alarms.length; i++) {
+  //     if (alarms[i] === NaN) {
+  //       alarms.splice(i,1);
+  //     }
+  // }
+
+    for (let i = 0; i < alarms.length; i++) {
+      if (alarms[i] < 0) {
+        alarms.splice(i,1);
+      }
     }
     
     console.log(alarms);
@@ -38,10 +50,8 @@ const timer = function () {
   
     }
 
-
   }
 
 
-}
 
 timer();
